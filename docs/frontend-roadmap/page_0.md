@@ -3,15 +3,15 @@ sidebar_position: 1
 ---
 # Get Start
 
-roadmap.sh前端方向的个人学习笔记。A personal study notes on the frontend track of the roadmap.sh website.
+roadmap.sh前端方向的个人学习笔记。
 
-路线地址：
+A personal study notes on the frontend track of the roadmap.sh website.
 
 [前端](https://roadmap.sh/pdfs/roadmaps/frontend.pdf)路线图
 
 Internet：
 
-* [ ] How does the internet work?
+* [X] How does the internet work?
 * [ ] What is HTTP?
 * [ ] What is Domain Name?
 * [ ] What is hosting?
