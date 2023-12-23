@@ -9,7 +9,7 @@ A personal study notes on the frontend track of the roadmap.sh website.
 
 [前端](https://roadmap.sh/pdfs/roadmaps/frontend.pdf)路线图
 
-Internet：
+**Internet：**
 
 * [X] How does the internet work?
 * [ ] What is HTTP?
@@ -18,52 +18,52 @@ Internet：
 * [ ] DNS and how it works?
 * [ ] Browsers and how they work?
 
-HTML:
+**HTML:**
 
 * [ ] Learn the basics
 * [ ] Writing Sematic HTML
 * [ ] Forms and Validations
 * [ ] Accessibility
 
-CSS:
+**CSS:**
 
 * [ ] Learn the basics
 * [ ] Making Layouts
 * [ ] Responsie Design
 
-JavaScript:
+**JavaScript:**
 
 * [ ] Learn Basics
 * [ ] Learn DOM Manipulation
 * [ ] Fetch API/Ajac(XHR)
 
-Version Control Systems:
+**Version Control Systems:**
 
 * [ ] Git
 
-VCS Hosting:
+**VCS Hosting:**
 
 * [ ] GitHub
 
-Package Managers:
+**Package Managers:**
 
 * [ ] npm
 
-Pick a Framework:
+**Pick a Framework:**
 
 * [ ] React
 
-Wrting CSS:
+**Wrting CSS:**
 
 * [ ] Tailwind
 * [ ] Radix UI
 * [ ] Shodcn UI
 
-CSS Architecture:
+**CSS Architecture:**
 
-CSS Preprocessors:
+**CSS Preprocessors:**
 
-Build Tools:
+**Build Tools:**
 
 * [ ] Module Bundlers
   * [ ] Vite
@@ -72,36 +72,36 @@ Build Tools:
   * [ ] npm scripts
 * [ ] Linters and Formatters
 
-Testing your Apps:
+**Testing your Apps:**
 
 * [ ] Vitest
 * [ ] Playwright
 
-Authentication Strategies:
+**Authentication Strategies:**
 
-Web Security Basics:
+**Web Security Basics:**
 
-Web Components:
+**Web Components:**
 
-Type Checkers:
+**Type Checkers:**
 
 * [ ] TypeScript
 
-Server Side Rendering(SSR)
+**Server Side Rendering(SSR)**
 
 * [ ] React
 
   * [ ] Next.js
   * [ ] Remix
 
-GraphQL:
+**GraphQL:**
 
-Static Site Generators:
+**Static Site Generators:**
 
-Progressive Web Apps:
+**Progressive Web Apps:**
 
-Mobile Applications:
+**Mobile Applications:**
 
-Desctop Applications:
+**Desctop Applications:**
 
-Bonus Content:
+**Bonus Content:**

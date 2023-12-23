@@ -1,7 +1,9 @@
 ---
-title: "为什么我们需要HTTP/3"
+title: "为什么需要HTTP/3"
 sidebar_position: 3
 ---
+# 为什么需要HTTP/3
+
 **原文地址：**
 
 * [第 1 部分： HTTP/3 历史和核心概念](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/)
@@ -15,12 +17,12 @@ sidebar_position: 3
 
 ## 为什么我们需要HTTP3？
 
-TCP的效率问题：
+**底层传输协议（TCP）没有考虑到效率问题。**
 
 * TCP需要“[握手](https://developer.mozilla.org/en-US/docs/Glossary/TCP_handshake)”来建立新连接。这样做是为了确保客户端和服务器都存在，并且它们愿意并且能够交换数据。然而，在连接上执行任何其他操作之前，也需要完成 **完整的网络往返。** 如果客户端和服务器地理位置相距较远，则每次往返时间 (RTT) 可能会超过 100 毫秒，从而导致明显的延迟。
 * TCP 将其传输的所有数据视为 **单个“文件”或字节流** ，即使我们实际上使用它同时传输多个文件（例如，当下载由以下内容组成的网页时）很多资源）。实际上，这意味着如果包含单个文件数据的 TCP 数据包丢失，那么所有其他文件也将被延迟，直到这些数据包恢复为止。
 
-底层传输协议（TCP）没有考虑到效率问题，因此新的传输协议 QUIC 出现了，QUIC 建立在UDP（User Datagram Protocol）之上，而不是 TCP。这使得 QUIC 可以更灵活地处理数据包的发送和接收。因此HTTP 升级为可以兼容该协议的 HTTP/3。
+因此新的传输协议 QUIC 出现了，QUIC 建立在UDP（User Datagram Protocol）之上，而不是 TCP。这使得 QUIC 可以更灵活地处理数据包的发送和接收。因此HTTP 升级为可以兼容该协议的 HTTP/3。
 
 QUIC 的使用意味着 HTTP/3 依赖于用户数据报协议 ([UDP](https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/))，而不是传输控制协议 ([TCP](https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/))。切换到 UDP 将使在线浏览时的连接速度和用户体验更快。
 
@@ -42,10 +44,7 @@ TLS（[传输层安全协议](https://www.cloudflare.com/en-gb/learning/ssl/tran
 
 随着时间的推移，我们对互联网安全的态度当然已经转变为“[默认安全](https://blog.chromium.org/2021/03/a-safer-default-for-navigation-https.html)”。因此，虽然理论上 HTTP/2 可以在没有 TLS 的情况下直接在 TCP 上运行（这甚至在 RFC 规范中定义为[明文 HTTP/2](https://tools.ietf.org/html/rfc7540#section-3.1)），但没有（流行的）Web 浏览器实际上支持这种模式。在某种程度上，浏览器供应商有意识地以牺牲性能为代价换取更高的安全性。
 
-
 > 对于大多数未指定协议的类型导航，Chrome 现在将默认使用 HTTPS  。HTTPS 是Chrome 在所有主要平台上更安全且[使用最广泛的方案。](https://transparencyreport.google.com/https/overview?hl=en)除了明显的安全和隐私改进之外，此更改还提高了支持 HTTPS 的网站的初始加载速度，因为 Chrome 将直接连接到 HTTPS 端点，而无需从 *http://* 重定向到 *https://* 。对于尚不支持 HTTPS 的网站，当 HTTPS 尝试失败时（包括出现证书错误，例如名称不匹配或不受信任的自签名证书，或连接错误，例如 DNS 解析失败），Chrome 将回退到 HTTP 。此更改首先在 Chrome 桌面版和 Android 版 Chrome 90 版本中推出，随后不久又发布 iOS 版 Chrome。
-
-
 
 鉴于向永远在线的 TLS（尤其是网络流量）的明显演变，QUIC 的设计者决定将这一趋势提升到一个新的水平也就不足为奇了。他们没有简单地不为 HTTP/3 定义明文模式，而是选择将加密深深地融入 QUIC 本身。虽然 QUIC 的第一个 Google 特定版本为此使用了自定义设置，但标准化 QUIC 直接使用现有的 TLS 1.3 本身。
 
@@ -98,5 +97,7 @@ TLS（[传输层安全协议](https://www.cloudflare.com/en-gb/learning/ssl/tran
 为了解决这个问题，QUIC引入了一个新的概念，称为 **连接标识符（CID）** 。每个连接都会在 4 元组顶部分配另一个编号，用于在两个端点之间唯一标识它。
 
 ### QUIC 使用框架
+
+未完待续
 
 # HTTP/3性能特性
