@@ -149,7 +149,7 @@ export default function Home() {
                 <br />
                 <h2>{`Hi! I'm Ym_Gao, `}<br />{`a `}{text}</h2>
                 <div className={styles.buttons}>
-                    <Link className={styles.tagline} to="/docs/frontend-roadmap/page_0">
+                    <Link className={styles.tagline} to="/docs/frontend-roadmap/start-page">
                         前往博客 →
                     </Link>
                 </div>
