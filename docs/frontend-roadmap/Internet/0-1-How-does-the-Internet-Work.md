@@ -4,14 +4,6 @@ sidebar_position: 1
 ---
 互联网是一组通过标准化协议相互连接的全球计算机网络，它们通过这些协议进行通信。
 
-访问以下资源以了解更多信息：
-
-* [How does the Internet Work?](https://cs.fyi/guide/how-does-internet-work)
-* [How Does the Internet Work? MDN Docs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
-* [Introduction to Internet](https://roadmap.sh/guides/what-is-internet)
-* [How does the Internet work?](https://www.youtube.com/watch?v=TNQsmPf24go)
-* [How the Internet Works in 5 Minutes](https://www.youtube.com/watch?v=7_LPdttKXPc)
-
 ## 网络是如何工作的
 
 作为开发者，了解互联网是什么以及它是如何运作的是至关重要的。这是大多数现代软件应用程序构建的基础。为了构建有效、安全和可扩展的应用程序和服务，您需要深入了解互联网的工作原理，以及如何利用其强大的能力和连接性。
@@ -135,3 +127,11 @@ TCP/IP（传输控制协议/互联网协议）是大多数基于互联网的应�
 - 协议在实现互联网上的通信和数据交换中发挥着至关重要的作用，使得来自不同制造商和供应商的设备和系统可以无缝通信。
 
 希望你觉得这篇文章有帮助。如果你有任何问题或意见，请随时在下面留言。感谢阅读！
+
+## 参考资料
+
+* [How does the Internet Work?](https://cs.fyi/guide/how-does-internet-work)
+* [How Does the Internet Work? MDN Docs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+* [Introduction to Internet](https://roadmap.sh/guides/what-is-internet)
+* [How does the Internet work?](https://www.youtube.com/watch?v=TNQsmPf24go)
+* [How the Internet Works in 5 Minutes](https://www.youtube.com/watch?v=7_LPdttKXPc)

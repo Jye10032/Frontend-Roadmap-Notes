@@ -2,17 +2,6 @@
 title: "为什么需要HTTP/3"
 sidebar_position: 3
 ---
-# 为什么需要HTTP/3
-
-**原文地址：**
-
-* [第 1 部分： HTTP/3 历史和核心概念](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/)
-  面向刚接触 HTTP/3 和一般协议的人，主要讨论基础知识。
-* [第 2 部分：HTTP/3 性能特性](https://www.smashingmagazine.com/2021/08/http3-performance-improvements-part2/)
-  这一部分更加深入和技术性强。已经了解基础知识的人可以从这里开始。
-* [第 3 部分：实用的 HTTP/3 部署选项](https://www.smashingmagazine.com/2021/09/http3-practical-deployment-options-part3/)
-  本系列的第三篇文章介绍了自行部署和测试 HTTP/3 所涉及的挑战。它还详细说明了如何以及是否应该更改网页和资源。
-
 # HTTP/3历史和核心概念
 
 ## 为什么我们需要HTTP3？
@@ -101,3 +90,14 @@ TLS（[传输层安全协议](https://www.cloudflare.com/en-gb/learning/ssl/tran
 未完待续
 
 # HTTP/3性能特性
+
+
+
+## **参考资料**
+
+* [第 1 部分： HTTP/3 历史和核心概念](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/)
+  面向刚接触 HTTP/3 和一般协议的人，主要讨论基础知识。
+* [第 2 部分：HTTP/3 性能特性](https://www.smashingmagazine.com/2021/08/http3-performance-improvements-part2/)
+  这一部分更加深入和技术性强。已经了解基础知识的人可以从这里开始。
+* [第 3 部分：实用的 HTTP/3 部署选项](https://www.smashingmagazine.com/2021/09/http3-practical-deployment-options-part3/)
+  本系列的第三篇文章介绍了自行部署和测试 HTTP/3 所涉及的挑战。它还详细说明了如何以及是否应该更改网页和资源。
