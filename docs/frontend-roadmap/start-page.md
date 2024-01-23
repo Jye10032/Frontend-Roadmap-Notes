@@ -3,24 +3,25 @@ sidebar_position: 1
 ---
 # Get Start
 
-roadmap.sh前端方向的个人学习笔记。
+根据roadmap.sh前端方向路线进行学习的个人学习笔记，包括部分文章翻译和补充资料查找。
 
 A personal study notes on the frontend track of the roadmap.sh website.[前端](https://roadmap.sh/pdfs/roadmaps/frontend.pdf)路线图
 
 **Internet：**
 
-* [X] How does the internet work?
+* [X] How does the internet work? 5/5
   * [X] Internet是如何工作的
-* [X] What is HTTP?
+* [X] What is HTTP? 4/7
   * [X] HTTP简介
   * [ ] 为什么需要HTTP3
-* [X] What is Domain Name?
+* [X] What is Domain Name? 3/3
   * [X] 域名
-* [X] What is hosting?
+* [X] What is hosting? 3/3
   * [X] 虚拟主机
-* [ ] DNS and how it works?
+* [ ] DNS and how it works? 4/7
   * [X] DNS
 * [ ] Browsers and how they work?
+  * [ ] 浏览器是如何工作的
 
 **HTML:**
 

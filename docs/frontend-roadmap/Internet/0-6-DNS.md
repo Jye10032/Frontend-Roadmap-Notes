@@ -89,3 +89,88 @@ DNS系统中，常见的资源记录类型有：
 ## DNS实践
 
 https://messwithdns.net/ 是一个DNS的实践网站，通过设置不同类型和TTL的DNS记录，体会DNS记录可能产生的影响。
+
+### 在创建DNS记录前访问域名
+
+在创建 DNS 记录之前访问域名， DNS 没有查询到域名的信息，并且将这次查询记录下来。当创建一条新的 DNS 记录后，重新访问该域名， DNS 服务器发现之前访问过这个域名，并且对应的记录显示上次查询记录没有查询到该域名对应的 IP ，因此会返回“server not found”error。等缓存释放后再访问才可以访问成功。
+
+### 设置很长的TTL
+
+设置很长的 TTL（比如３000 000 代表 30 天）会导致当目标地址发生变化时，由于缓存没有到期释放，所以不会更新，如果设置一个短的 TTL，当重新访问该地址时，由于缓存已经到期释放，会重新使用 DNS 进行处理，因此能即使得到更新后的结果。	
+
+### 查询域名与 IP 地址之间的映射
+
+```powershell
+#命令行输入 nslookup [域名]
+nslookup example.com
+
+#查询结果
+服务器:  ns3.zj.chinamobile.com
+Address:  211.140.13.188
+
+非权威应答:
+名称:    example.com
+Addresses:  2606:2800:220:1:248:1893:25c8:1946
+          93.184.216.34
+
+#查询特定类型的 DNS 记录
+nslookup -type=mx google.com
+# mx 代表邮件交换记录， A 代表地址记录， NS 代表名称服务器记录
+
+#使用特定的 DNS 服务器查询
+nslookup www.google.com 8.8.8.8
+# 8.8.8.8 是 Google 的 DNS 服务器 
+
+#交互模式，先输入 nslookup 然后按回车，可以连续执行多个查询操作
+nslookup
+> set type=mx
+> google.com
+> exit
+
+```
+
+**服务器信息** :
+
+* **服务器** : `ns3.zj.chinamobile.com`
+* **Address** : `211.140.13.188`
+
+   这表明 DNS 查询是通过 "ns3.zj.chinamobile.com" 这个 DNS 服务器进行的，其 IP 地址是 211.140.13.188。
+
+**非权威应答** :
+
+* 这表示提供的答案不是来自负责该域名的权威DNS服务器，而是来自缓存或其他非权威源的答案。
+
+**域名和地址** :
+
+* **名称** : `example.com`
+* **Addresses** : `2606:2800:220:1:248:1893:25c8:1946`, `93.184.216.34`
+
+   这里列出了域名 "example.com" 解析到的 IP 地址。它包括一个 IPv6 地址 (`2606:2800:220:1:248:1893:25c8:1946`) 和一个 IPv4 地址 (`93.184.216.34`)。这些地址是访问 "example.com" 所对应的服务器位置。
+
+ `nslookup` 命令的输出显示了通过指定的 DNS 服务器对 "example.com" 域名进行解析的结果，包括该域名对应的 IPv4 和 IPv6 地址。由于响应是“非权威应答”，这意味着返回的数据可能来自 DNS 服务器的缓存。
+
+### 将两个域名指向一个IP地址
+
+在示例中，example.com 对应的 IP 地址是 93.184.216.34，现在要创建一个新的域名 bad-ip 同样指向 example.com 的 IP 地址，此时发生了访问错误，这是因为在 HTTP 请求阶段，浏览器在 HTTP 头部包含了原始域名（ Host：bad-ip），服务器处理了该请求，发现 Host 字段的 bad-ip 没有相关的配置内容，它无法处理该请求，因此返回了 404 错误，表明它没有找到与该请求相对应的资源。
+
+### 在 3 个不同的 DNS 服务器上为同一个域名设置 3 个不同的 IP 地址、
+
+不同的 DNS 解析器（如 Google、Cloudflare 和 Quad9）可能会对同一个域名持有不同的 IP 地址信息。
+
+DNS 服务器为了提高效率和减少查询次数，会缓存 DNS 查询结果一段时间（由 TTL 控制）。在 TTL 过期之前，对同一域名的再次查询将直接使用缓存的结果。由于 Google、Cloudflare 和 Quad9 只在收到 DNS 查询请求时才进行解析，可以通过在每次更改 A 记录后立即查询特定的 DNS 服务器，控制它们分别缓存不同的 IP 地址。
+
+### 为一个域名设置 2 个 IP 地址，两个 IP 地址的页面不同
+
+设置了较小的 TTL ，因此缓存时间短，在多次重复请求网页时，由于两个 IP 地址的网站标题不同，可以直观的显示出区别：网页交替出现不同的标题。
+
+
+* [DNS Records](https://www.youtube.com/watch?v=7lxgpKh_fRY)
+* [When to add glue records to DNS settings](https://www.youtube.com/watch?v=e48AyJOA9W8)
+* [DNS Records for Newbies - How To Manage Website Records](https://www.youtube.com/watch?v=YV5tkQYcvfg)
+
+## 参考资料
+
+* [What is DNS?](https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/)
+* [Mess with DNS - DNS Playground](https://messwithdns.net/)
+* [How DNS works (comic)](https://howdns.works/)
+* [DNS and How does it Work?](https://www.youtube.com/watch?v=Wj0od2ag5sk)
